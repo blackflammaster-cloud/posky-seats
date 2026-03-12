@@ -48,16 +48,21 @@
         .full-status { background-color: #ffebee; color: #c62828; }
 
         /* 圖例樣式 */
+        .footer-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding: 0 10px;
+            font-size: 12px;
+            color: #888;
+        }
         .legend {
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 15px;
-            font-size: 14px;
-            color: #666;
+            gap: 15px;
             font-weight: 500;
         }
-        .legend-item { display: flex; align-items: center; gap: 5px; }
+        .legend-item { display: flex; align-items: center; gap: 3px; }
         
         /* 模擬 POSKY 平面圖風格的網格 (5列3排) */
         .table-grid { 
@@ -95,7 +100,6 @@
         .available { background-color: #9e9e9e; } /* 灰色：空桌 */
         .occupied { background-color: #4caf50; }  /* 綠色：有坐人 */
         
-        .footer { margin-top: 20px; font-size: 12px; color: #888; }
         .refresh-btn { margin-top: 20px; padding: 10px 20px; border: none; background: #007bff; color: white; border-radius: 8px; cursor: pointer; font-size: 14px;}
         .refresh-btn:hover { background: #0056b3; }
     </style>
@@ -110,18 +114,19 @@
             </div>
             <img src="images/cat-right.jpg" class="deco-img" alt="店貓右">
         </div>
-
-        <div class="legend">
-            <div class="legend-item">⚪ 灰色代表空桌</div>
-            <div class="legend-item">🟢 綠色代表有人坐</div>
-        </div>
         
         <!-- 座位表區塊 -->
         <div class="table-grid" id="tables">
             <!-- 這裡的內容將由 JavaScript 動態載入 -->
         </div>
         
-        <div class="footer" id="last-updated">最後更新：讀取中...</div>
+        <div class="footer-info">
+            <div id="last-updated">最後更新：讀取中...</div>
+            <div class="legend">
+                <div class="legend-item">⚪ : 空桌</div>
+                <div class="legend-item">🟢 : 有人坐</div>
+            </div>
+        </div>
         <button class="refresh-btn" onclick="manualRefresh()">即時同步座位</button>
     </div>
 

@@ -17,7 +17,15 @@
             gap: 15px;
         }
 
-        h1 { color: #333; font-size: 24px; margin: 0; flex: 1; }
+        .title-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            gap: 10px;
+        }
+
+        h1 { color: #333; font-size: 24px; margin: 0; }
         
         .deco-img {
             width: 180px;
@@ -32,9 +40,10 @@
         @media (max-width: 600px) {
             .header-section { flex-wrap: wrap; justify-content: center; }
             .deco-img { width: 120px; height: 150px; }
-            h1 { width: 100%; order: -1; margin-bottom: 10px; font-size: 20px; }
+            .title-wrapper { width: 100%; order: -1; margin-bottom: 10px; }
+            h1 { font-size: 20px; }
         }
-        .status-badge { display: inline-block; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 18px; margin-bottom: 20px; }
+        .status-badge { display: inline-block; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 18px; margin: 0; }
         .available-status { background-color: #e8f5e9; color: #2e7d32; }
         .full-status { background-color: #ffebee; color: #c62828; }
         
@@ -83,10 +92,12 @@
     <div class="container">
         <div class="header-section">
             <img src="images/cat-left.jpg" class="deco-img" alt="店貓左">
-            <h1>店內即時座位</h1>
+            <div class="title-wrapper">
+                <h1>店內即時座位</h1>
+                <div id="main-status" class="status-badge available-status">尚有空位 (3 席)</div>
+            </div>
             <img src="images/cat-right.jpg" class="deco-img" alt="店貓右">
         </div>
-        <div id="main-status" class="status-badge available-status">尚有空位 (3 席)</div>
         
         <!-- 座位表區塊 -->
         <div class="table-grid" id="tables">

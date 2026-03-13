@@ -74,7 +74,8 @@
             gap: 10px;
             font-weight: 500;
         }
-        .legend-item { display: flex; align-items: center; gap: 3px; white-space: nowrap; }
+        .legend-item { display: flex; align-items: center; gap: 5px; white-space: nowrap; }
+        .legend-box { width: 12px; height: 12px; border-radius: 2px; display: inline-block; }
         
         /* 模擬 POSKY 平面圖風格的網格 (5列3排) */
         .grid-outer {
@@ -154,9 +155,9 @@
         <div class="footer-info">
             <div id="last-updated">最後更新：讀取中...</div>
             <div class="legend">
-                <div class="legend-item">⚪ 空桌</div>
-                <div class="legend-item">🟢 有人</div>
-                <div class="legend-item"><span style="display:inline-block; width:12px; height:12px; background:linear-gradient(90deg, #9e9e9e 50%, #4caf50 50%); border-radius:2px;"></span> 併桌</div>
+                <div class="legend-item"><span class="legend-box" style="background-color: #9e9e9e;"></span> 空桌</div>
+                <div class="legend-item"><span class="legend-box" style="background-color: #4caf50;"></span> 有人</div>
+                <div class="legend-item"><span class="legend-box" style="background: linear-gradient(90deg, #9e9e9e 50%, #4caf50 50%);"></span> 併桌</div>
             </div>
         </div>
         <button class="refresh-btn" onclick="manualRefresh()">即時同步座位</button>

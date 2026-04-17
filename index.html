@@ -182,8 +182,8 @@
                     tablesDiv.style.display = 'grid';
                 }
 
-                // const res = await fetch('/api/seats'); // 舊的讀取方式
-                const res = await fetch('https://poskyseat2-default-rtdb.asia-southeast1.firebasedatabase.app/seatData.json');
+                // const res = await fetch('https://poskyseat2-default-rtdb.asia-southeast1.firebasedatabase.app/seatData.json');
+                const res = await fetch('./seatData.json?' + new Date().getTime());
                 const data = await res.json();
                 
                 if (data.availableTables > 0) {
